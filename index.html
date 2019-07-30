@@ -6,27 +6,22 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>  
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <div id="app">
         <nav class="nav navbar-default">
             <div class="container-fluid">
-                <div v-if="language == 'cht'" class="navbar-header">
-                    <a class="navbar-brand">百變怪變身！</a>
-                </div>
-                <div v-else-if="language == 'eng'" class="navbar-header">
-                        <a class="navbar-brand">Ditto Transform!</a>
-                </div>
-                <div v-else-if="language == 'jp'" class="navbar-header">
-                        <a class="navbar-brand">メタモン変身！</a>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li><a data-toggle="tab" href="#" @click.prevent="language = 'cht'">繁體中文</a></li>
-                    <li><a data-toggle="tab" href="#" @click.prevent="language = 'eng'">English</a></li>
-                    <li><a data-toggle="tab" href="#" @click.prevent="language = 'jp'">日本語</a></li>
+                <ul class="nav nav-tabs">
+                    <li class="nav-item active" v-if="language == 'cht'"><a class="nav-link">百變怪變身！</a></li>
+                    <li class="nav-item active" v-if="language == 'eng'"><a class="nav-link">Ditto Transform!</a></li>
+                    <li class="nav-item active" v-if="language == 'jp'"><a class="nav-link">メタモン変身！</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" @click.prevent="language = 'cht'">繁體中文</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" @click.prevent="language = 'eng'">English</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" @click.prevent="language = 'jp'">日本語</a></li>
                 </ul>
             </div>
         </nav>
