@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>  
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <nav class="nav navbar-default">
+            <div class="container-fluid">
+                <div v-if="language == 'cht'" class="navbar-header">
+                    <a class="navbar-brand">百變怪變身！</a>
+                </div>
+                <div v-else-if="language == 'eng'" class="navbar-header">
+                        <a class="navbar-brand">Ditto Transform!</a>
+                </div>
+                <div v-else-if="language == 'jp'" class="navbar-header">
+                        <a class="navbar-brand">メタモン変身！</a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li><a data-toggle="tab" href="#" @click.prevent="language = 'cht'">繁體中文</a></li>
+                    <li><a data-toggle="tab" href="#" @click.prevent="language = 'eng'">English</a></li>
+                    <li><a data-toggle="tab" href="#" @click.prevent="language = 'jp'">日本語</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <div v-if="language == 'cht'">
+            <img v-bind:src="cht000001"> 
+            <img v-bind:src="cht000002">
+            <img v-bind:src="cht000003">
+            <img v-bind:src="cht000004">
+            <img v-bind:src="cht000005">
+            <img v-bind:src="cht000006">
+            <img v-bind:src="cht000007">
+            <img v-bind:src="cht000008">
+            <img v-bind:src="cht000009"> 
+            <img v-bind:src="cht001001"> 
+        </div>
+        <div v-else-if="language == 'eng'"> 
+            <img v-bind:src="eng000001"> 
+            <img v-bind:src="eng000002"> 
+            <img v-bind:src="eng000003"> 
+            <img v-bind:src="eng000004"> 
+            <img v-bind:src="eng000005"> 
+            <img v-bind:src="eng000006"> 
+            <img v-bind:src="eng000007"> 
+            <img v-bind:src="eng000008"> 
+            <img v-bind:src="eng000009"> 
+            <img v-bind:src="eng001001">
+        </div>
+        <div v-else-if="language == 'jp'"> 
+            <img v-bind:src="jp000001"> 
+            <img v-bind:src="jp000002"> 
+            <img v-bind:src="jp000003"> 
+            <img v-bind:src="jp000004"> 
+            <img v-bind:src="jp000005"> 
+            <img v-bind:src="jp000006"> 
+            <img v-bind:src="jp000007"> 
+            <img v-bind:src="jp000008"> 
+            <img v-bind:src="jp000009">
+            <img v-bind:src="jp001001"> 
+        </div>
+    
+    </div>
+</body>
+</html>
+
+<style>
+
+    img {
+        max-width: 50%;
+        box-shadow: 5px 0 7px -8px #373737,
+                    -5px 0 7px -8px #373737;
+        margin: 0px 0px 0px 2em;
+        padding: 5px 0 5px 0;
+    }
+
+</style>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            
+            cht000001: 'comics/cht/000_001_CHT.png',
+            cht000002: 'comics/cht/000_002_CHT.png',
+            cht000003: 'comics/cht/000_003_CHT.png',
+            cht000004: 'comics/cht/000_004_CHT.png',
+            cht000005: 'comics/cht/000_005_CHT.png',
+            cht000006: 'comics/cht/000_006_CHT.png',
+            cht000007: 'comics/cht/000_007_CHT.png',
+            cht000008: 'comics/cht/000_008_CHT.png',
+            cht000009: 'comics/cht/000_009_CHT.png',
+            cht001001: 'comics/cht/001_001_CHT.png',
+
+            eng000001: 'comics/eng/000_001_ENG.png',
+            eng000002: 'comics/eng/000_002_ENG.png',
+            eng000003: 'comics/eng/000_003_ENG.png',
+            eng000004: 'comics/eng/000_004_ENG.png',
+            eng000005: 'comics/eng/000_005_ENG.png',
+            eng000006: 'comics/eng/000_006_ENG.png',
+            eng000007: 'comics/eng/000_007_ENG.png',
+            eng000008: 'comics/eng/000_008_ENG.png',
+            eng000009: 'comics/eng/000_009_ENG.png',
+            eng001001: 'comics/eng/001_001_ENG.png',
+
+            jp000001: 'comics/jp/000_001_JP.png',
+            jp000002: 'comics/jp/000_002_JP.png',
+            jp000003: 'comics/jp/000_003_JP.png',
+            jp000004: 'comics/jp/000_004_JP.png',
+            jp000005: 'comics/jp/000_005_JP.png',
+            jp000006: 'comics/jp/000_006_JP.png',
+            jp000007: 'comics/jp/000_007_JP.png',
+            jp000008: 'comics/jp/000_008_JP.png',
+            jp000009: 'comics/jp/000_009_JP.png',
+            jp001001: 'comics/jp/001_001_JP.png',
+            
+            classname: 'img-fluid',
+            
+            language: 'cht',
+        }
+    })
+
+</script>
